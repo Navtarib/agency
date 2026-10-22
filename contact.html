@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Start a Project — NavTarib Business Solutions</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="announcement">
+      <span class="pulse"></span> Tell us what you're imagining
+    </div>
+    <header class="site-header">
+      <a class="brand" href="index.html"
+        ><span class="brand-mark">N<span>.</span></span
+        ><span class="brand-copy"
+          >NavTarib<small>BUSINESS SOLUTIONS</small></span
+        ></a
+      ><button class="menu-toggle" aria-label="Toggle menu">
+        <i></i><i></i>
+      </button>
+      <nav class="nav">
+        <a href="index.html">Home</a><a href="index.html#services">Services</a
+        ><a href="index.html#work">Our work</a><a href="about.html">About us</a
+        ><a href="ceo.html">CEO message</a
+        ><a class="nav-cta active-cta" href="contact.html"
+          >Let's talk <span>↗</span></a
+        >
+      </nav>
+    </header>
+    <main>
+      <section class="contact-hero section-wrap">
+        <div class="contact-intro reveal">
+          <div class="eyebrow">
+            <span class="eyebrow-line"></span> START SOMETHING GOOD
+          </div>
+          <h1>Let's talk about<br /><em>what's possible.</em></h1>
+          <p>
+            Share a little about your idea, your challenge or the thing you want
+            to make better. We'll take it from there.
+          </p>
+          <div class="contact-promise">
+            <span>✳</span>
+            <div>
+              <strong>No pressure. No jargon.</strong
+              ><small>Just a thoughtful first conversation.</small>
+            </div>
+          </div>
+          <div class="contact-direct">
+            <span>HAVE A QUICK QUESTION?</span
+            ><a href="#" data-link="whatsapp">Message us on WhatsApp ↗</a
+            ><small
+              >Update the WhatsApp number in <code>script.js</code> before
+              publishing.</small
+            >
+          </div>
+        </div>
+        <form class="contact-form reveal delay-1" id="contactForm">
+          <div class="form-top">
+            <span>PROJECT ENQUIRY</span><span>LET'S BEGIN ↗</span>
+          </div>
+          <label for="name">Your name <b>*</b></label
+          ><input
+            id="name"
+            name="name"
+            placeholder="e.g. Ayesha Khan"
+            required
+          /><label for="email">Email address <b>*</b></label
+          ><input
+            id="email"
+            type="email"
+            name="email"
+            placeholder="you@company.com"
+            required
+          /><label for="service">What can we help with? <b>*</b></label
+          ><select id="service" name="service" required>
+            <option value="">Choose a service</option>
+            <option>Website design & development</option>
+            <option>Ecommerce</option>
+            <option>SaaS / web application</option>
+            <option>SEO</option>
+            <option>WhatsApp automation</option>
+            <option>Social media management</option>
+            <option>Something else</option></select
+          ><label for="budget">Estimated budget</label
+          ><select id="budget" name="budget">
+            <option value="">Choose if you know</option>
+            <option>Under $500</option>
+            <option>$500–$1,500</option>
+            <option>$1,500–$5,000</option>
+            <option>$5,000+</option>
+            <option>Let's discuss</option></select
+          ><label for="details"
+            >Tell us a little about your project <b>*</b></label
+          ><textarea
+            id="details"
+            name="details"
+            rows="4"
+            placeholder="What are you hoping to build or improve?"
+            required
+          ></textarea
+          ><button class="btn btn-primary form-submit" type="submit">
+            Prepare my enquiry <span>↗</span>
+          </button>
+          <p class="form-privacy">
+            Your details are used to respond to your enquiry. This demo form
+            opens your email app; connect a backend or form service for
+            production.
+          </p>
+          <div class="form-status" role="status" aria-live="polite"></div>
+        </form>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-main section-wrap">
+        <a class="brand brand-footer" href="index.html"
+          ><span class="brand-mark">N<span>.</span></span
+          ><span class="brand-copy"
+            >NavTarib<small>BUSINESS SOLUTIONS</small></span
+          ></a
+        >
+        <p>
+          Thoughtful digital solutions for businesses ready to move forward.
+        </p>
+        <div class="footer-links">
+          <a href="about.html">About us</a><a href="ceo.html">CEO message</a
+          ><a href="contact.html">Contact</a>
+        </div>
+        <a class="back-top" href="#">BACK TO TOP ↑</a>
+      </div>
+      <div class="footer-bottom section-wrap">
+        <span>© <span id="year"></span> NavTarib Business Solutions</span
+        ><span>MADE FOR WHAT'S NEXT <b>✳</b></span>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
