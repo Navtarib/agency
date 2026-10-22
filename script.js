@@ -5,9 +5,15 @@ const CONFIG = {
     saas: "https://example.com/saas-project",
     automation: "https://cleaninghome.vercel.app"
   },
-  whatsappNumber: "+923152245671", // Replace with your WhatsApp number, digits only.
-  contactEmail: "naveedcodezyra@gmail.com" // Replace with your real business email.
+  whatsappNumber: "+923152245671" // Replace with your WhatsApp number, including country code.
 };
+
+function getWhatsappUrl(message = "") {
+  const number = CONFIG.whatsappNumber.replace(/\D/g, "");
+  if (!number || number === "923001234567") return null;
+  const text = message ? `?text=${encodeURIComponent(message)}` : "";
+  return `https://wa.me/${number}${text}`;
+}
 
 document.querySelectorAll("#year").forEach(el => el.textContent = new Date().getFullYear());
 
@@ -62,16 +68,16 @@ document.querySelectorAll("[data-project]").forEach(card => {
 document.querySelectorAll('[data-link="whatsapp"]').forEach(link => {
   link.addEventListener("click", event => {
     event.preventDefault();
-    if (!CONFIG.whatsappNumber || CONFIG.whatsappNumber === "923001234567") {
+    const url = getWhatsappUrl();
+    if (!url) {
       alert("Replace CONFIG.whatsappNumber in script.js with your real WhatsApp number first.");
       return;
     }
-    window.open(`https://wa.me/${CONFIG.whatsappNumber}`, "_blank", "noopener,noreferrer");
+    window.open(url, "_blank", "noopener,noreferrer");
   });
 });
 
-// Contact form: opens the visitor's email app with a prepared enquiry.
-// For automatic submissions, connect a backend or form provider.
+// Contact form: opens WhatsApp with the visitor's enquiry prepared for sending.
 const contactForm = document.querySelector("#contactForm");
 if (contactForm) {
   const params = new URLSearchParams(window.location.search);
@@ -84,18 +90,16 @@ if (contactForm) {
   contactForm.addEventListener("submit", event => {
     event.preventDefault();
     const data = new FormData(contactForm);
-    const subject = encodeURIComponent(`Project enquiry — ${data.get("service")}`);
-    const body = encodeURIComponent(
-      `Name: ${data.get("name")}\nEmail: ${data.get("email")}\nService: ${data.get("service")}\nBudget: ${data.get("budget") || "Not specified"}\n\nProject details:\n${data.get("details")}`
-    );
+    const message =
+      `Project enquiry\nName: ${data.get("name")}\nEmail: ${data.get("email")}\nService: ${data.get("service")}\nBudget: ${data.get("budget") || "Not specified"}\n\nProject details:\n${data.get("details")}`;
     const status = contactForm.querySelector(".form-status");
-    if (!CONFIG.contactEmail || CONFIG.contactEmail === "hello@example.com") {
-      status.textContent = "Before launch, update CONFIG.contactEmail in script.js. Your enquiry is ready, but no message has been sent.";
+    const url = getWhatsappUrl(message);
+    if (!url) {
+      status.textContent = "Before launch, update CONFIG.whatsappNumber in script.js. Your enquiry is ready, but no message has been sent.";
       status.classList.add("status-warning");
       return;
     }
-    status.textContent = "Opening your email app with the enquiry prepared…";
-    // window.location.href = `mailto:${CONFIG.contactEmail}?subject=${subject}&body=${body}`;
-    window.open(`https://wa.me/${CONFIG.whatsappNumber}`, "_blank", "noopener,noreferrer");
+    status.textContent = "Opening WhatsApp with your enquiry prepared. Review and send it there.";
+    window.open(url, "_blank", "noopener,noreferrer");
   });
 }
