@@ -83,32 +83,52 @@ select {
 .brand {
   display: flex;
   align-items: center;
-  gap: 10px;
+  gap: 11px;
 }
 .brand-mark {
+  position: relative;
+  flex: 0 0 42px;
   width: 42px;
   height: 42px;
-  background: var(--dark);
+  background: linear-gradient(145deg, #243a2e, #14271e);
   color: white;
   display: grid;
   place-items: center;
-  font: 800 24px var(--display);
-  border-radius: 13px;
+  font-size: 0;
+  border: 1px solid #ffffff1a;
+  border-radius: 14px;
+  box-shadow: 0 5px 12px #17291f20, inset 0 1px #ffffff1c;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.brand-mark::before {
+  content: "C";
+  font: 800 25px/1 var(--display);
   letter-spacing: -0.08em;
+  transform: translateX(-1px);
+}
+.brand:hover .brand-mark,
+.brand:focus-visible .brand-mark {
+  transform: translateY(-1px);
+  box-shadow: 0 7px 16px #17291f2e, inset 0 1px #ffffff24;
 }
 .brand-mark span {
+  position: absolute;
+  right: 8px;
+  bottom: 7px;
   color: var(--orange);
+  font: 800 15px/1 var(--display);
 }
 .brand-copy {
-  font: 800 16px var(--display);
-  letter-spacing: -0.04em;
+  font: 800 17px/1 var(--display);
+  letter-spacing: -0.055em;
+  color: var(--dark);
 }
 .brand-copy small {
   display: block;
-  font: 700 8px var(--font);
-  letter-spacing: 0.16em;
+  font: 700 7px/1.2 var(--font);
+  letter-spacing: 0.19em;
   color: #768078;
-  margin-top: 3px;
+  margin-top: 5px;
 }
 .nav {
   display: flex;
@@ -467,7 +487,7 @@ select {
   position: absolute;
   right: 2px;
   bottom: 15px;
-  font: 800 24px var(--display);
+  font: 800 20px var(--display);
   color: var(--dark);
   transform: rotate(8deg);
 }
@@ -1202,7 +1222,8 @@ select {
   gap: 25px;
 }
 .brand-footer .brand-mark {
-  background: #2a4134;
+  background: linear-gradient(145deg, #355443, #263e31);
+  box-shadow: 0 5px 12px #00000024, inset 0 1px #ffffff1c;
 }
 .brand-footer .brand-copy small {
   color: #9ba99d;
@@ -1943,14 +1964,23 @@ select {
     padding-inline: 14px;
   }
   .brand {
-    gap: 7px;
+    gap: 8px;
   }
   .brand-copy {
-    font-size: 14px;
+    font-size: 16px;
   }
   .brand-mark {
+    flex-basis: 38px;
     width: 38px;
     height: 38px;
+    border-radius: 12px;
+  }
+  .brand-mark::before {
+    font-size: 23px;
+  }
+  .brand-mark span {
+    right: 7px;
+    bottom: 6px;
   }
   .hero-actions {
     align-items: flex-start;

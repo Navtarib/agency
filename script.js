@@ -1,4 +1,4 @@
-// NavTarib Business Solutions — update these placeholders before launch.
+// CredoDev Business Solutions — update these placeholders before launch.
 const CONFIG = {
   projectLinks: {
     ecommerce: "https://mart-gravity.vercel.app",
