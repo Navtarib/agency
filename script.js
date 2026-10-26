@@ -1,9 +1,9 @@
 // CredoDev Business Solutions — update these placeholders before launch.
 const CONFIG = {
   projectLinks: {
-     
-    saas: "https://northtour.vercel.app",
-       ecommerce: "https://mart-gravity.vercel.app",
+     ecommerce:
+     "https://northtour.vercel.app",
+       saas: "https://mart-gravity.vercel.app",
     automation: "https://cleaninghome.vercel.app"
   },
   whatsappNumber: "+923152245671" // Replace with your WhatsApp number, including country code.
